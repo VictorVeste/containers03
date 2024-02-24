@@ -12,16 +12,16 @@ Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un con
 
 1. **Pornirea și testarea:**
 
-   Deschideți terminalul în directorul 'containers03' și executați următoarea comandă pentru a porni un container Ubuntu și a accesa terminalul său interactiv:
+   Deschidem terminalul în directorul 'containers03' și executăm următoarea comandă pentru a porni un container Ubuntu și a accesa terminalul său interactiv:
 
    ```bash
    docker run -ti -p 8000:80 --name containers03 ubuntu bash
    ```
 
    - **Scop:** Această comandă lansează un container Docker bazat pe imaginea Ubuntu și deschide un terminal interactiv în container.
-   - **Rezultat:** Veți fi conectat la terminalul containerului, pregătit pentru a executa comenzi în interiorul său.
+   - **Rezultat:** Vom fi conectați la terminalul containerului, pregătit pentru a executa comenzi în interiorul său.
 
-   În fereastra terminalului containerului, executați următoarele comenzi:
+   În fereastra terminalului containerului, executăm următoarele comenzi:
 
    ```bash
    apt update
@@ -46,14 +46,14 @@ Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un con
 
 2. **Testarea paginii web:**
 
-   Deschideți un browser și accesați adresa http://localhost:8000. Ar trebui să vedeți pagina web implicită Apache.
+   Deschidem un browser și accesăm adresa http://localhost:8000. Ar trebui să vedem pagina web implicită Apache.
 
    ![Pagina web implicită Apache](img/web-ubuntu.png)
 
    - **Scop:** Verificarea funcționării serverului web Apache și a conectivității la container.
    - **Rezultat:** Vizualizarea paginii web implicite Apache în browser.
 
-   În continuare, executați următoarele comenzi în terminalul containerului:
+   În continuare, executăm următoarele comenzi în terminalul containerului:
 
    ```bash
    ls -l /var/www/html/
@@ -69,7 +69,7 @@ Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un con
    - **Scop:** Creează un fișier HTML simplu care va afișa textul "Hello, World!" în directorul de rădăcină al site-ului web Apache.
    - **Rezultat:** Fișierul HTML index.html este creat sau actualizat cu conținutul specificat.
 
-   Reîmprospătați pagina în browser. Ar trebui acum să vedeți textul "Hello, World!" afișat pe pagină.
+   Reîmprospătăm pagina în browser. Ar trebui acum să vedem textul "Hello, World!" afișat pe pagină.
 
    ![Pagina web modificată](img/web-mod.png)
 
@@ -78,7 +78,7 @@ Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un con
 
 3. **Explorarea configurării Apache:**
 
-   Executați următoarele comenzi în terminalul containerului:
+   Executăm următoarele comenzi în terminalul containerului:
 
    ```bash
    cd /etc/apache2/sites-enabled/
@@ -99,9 +99,9 @@ Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un con
 
 4. **Finalizare și curățare:**
 
-   Închideți fereastra terminalului containerului cu comanda 'exit'.
+   Închidem fereastra terminalului containerului cu comanda 'exit'.
 
-   Afișați lista de containere Docker în terminalul gazdă:
+   Afișăm lista de containere Docker în terminalul gazdă:
 
    ```bash
    docker ps -a
@@ -110,7 +110,7 @@ Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un con
    - **Scop:** Afișează o listă a tuturor containerelor Docker, inclusiv cele oprite.
    - **Rezultat:** Lista containerelor Docker în consolă.
 
-   Ștergeți containerul creat anterior:
+   Ștergem containerul creat anterior:
 
    ```bash
    docker rm containers03
