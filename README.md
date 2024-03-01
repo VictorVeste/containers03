@@ -22,21 +22,21 @@ docker run -ti -p 8000:80 --name containere03 ubuntu bash
 
 ```bash
 apt update
-'''
+```
 
 - **Scop:** Actualizează lista de pachete disponibile pentru instalare în interiorul containerului.
 - **Rezultat:** Lista de pachete disponibile este actualizată, pregătind sistemul pentru instalarea Apache.
 
 ```bash
 apt install apache2 -y
-'''
+```
 
 - **Scop:** Instalează serverul web Apache în container fără a solicita confirmare manuală (-y pentru a confirma automat).
 - **Rezultat:** Apache este instalat și pregătit pentru pornire.
 
 ```bash
 service apache2 start
-
+```
 
 - **Scop:** Pornirea serviciului Apache în container.
 - **Rezultat:** Serverul web Apache este activat și pregătit pentru a servi conținut.
@@ -69,7 +69,7 @@ ls -l /var/www/html/
 
 ```bash
 echo '<h1>Salutare, lume!</h1>' > /var/www/html/index.html
-
+```
 
 - **Descriere:** Creează un fișier HTML simplu care va afișa mesajul "Salutare, lume!" în directorul de bază al site-ului web Apache.
 - **Rezultat:** Fișierul HTML index.html este creat sau actualizat cu mesajul specificat.
@@ -90,7 +90,7 @@ cd /etc/apache2/sites-enabled/
 
 ```bash
 cat 000-default.conf
-
+```
 
 - **Descriere:** Afișează conținutul fișierului de configurare pentru site-ul implicit Apache.
 - **Rezultat:** Afișează configurarea site-ului implicit Apache în consolă.
@@ -109,7 +109,7 @@ docker ps -a
 
 ```bash
 docker rm containers03
-
+```
 
 - **Descriere:** Șterge containerul Docker specificat.
 - **Rezultat:** Containerul Docker este șters din sistemul gazdă.
