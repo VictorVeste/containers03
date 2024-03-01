@@ -1,125 +1,26 @@
-# Utilizarea containerelor ca medii de execuție
+# Descoperirea puterii containerelor
 
-## Scopul
+## Intenție
 
-Această lucrare de laborator își propune să familiarizeze utilizatorii cu comenzile de bază ale OS Debian/Ubuntu și să ofere o introducere în Docker și comenzile sale de bază.
+Această experiență de laborator este gândită pentru a introduce utilizatorii în funcționarea OS-urilor Debian/Ubuntu și pentru a-i iniția în lumea Docker și a comenzilor sale fundamentale.
 
-## Descriere
+## Prezentare
 
-Pornind de la imaginea oficială a sistemului de operare Ubuntu, vom crea un container care va conține un server web Apache. Vom crea o pagină web simplă care va afișa textul "Hello, World!" și vom testa afișarea acesteia într-un browser.
+Plecat de la imaginea oficială a sistemului de operare Ubuntu, vom construi un container ce va găzdui un server web Apache. Vom crea o pagină web simplă ce va afișa mesajul "Hello, World!" și vom testa accesarea acesteia într-un browser.
 
-## Instrucțiuni
+## Pași de urmat
 
-1. **Pornirea și testarea:**
+1. **Inițiere și verificare:**
 
-   Deschidem terminalul în directorul 'containers03' și executăm următoarea comandă pentru a porni un container Ubuntu și a accesa terminalul său interactiv:
+   Pornim terminalul în directorul 'containers03' și executăm comanda de mai jos pentru a demara un container Ubuntu și a accesa terminalul său interactiv:
 
    ```bash
    docker run -ti -p 8000:80 --name containers03 ubuntu bash
-   ```
-
-   - **Scop:** Această comandă lansează un container Docker bazat pe imaginea Ubuntu și deschide un terminal interactiv în container.
-   - **Rezultat:** Vom fi conectați la terminalul containerului, pregătit pentru a executa comenzi în interiorul său.
-
-   În fereastra terminalului containerului, executăm următoarele comenzi:
-
    ```bash
-   apt update
-   ```
+*   **Obiectiv:** Această comandă lansează un container Docker bazat pe imaginea Ubuntu și ne conectează la terminalul său.
+*   **Rezultat:** Suntem acum în terminalul containerului, pregătiți pentru a executa comenzile necesare.
 
-   - **Scop:** Actualizează lista de pachete disponibile pentru instalare în interiorul containerului.
-   - **Rezultat:** Lista de pachete disponibile este actualizată, pregătindu-vă pentru instalarea Apache.
+În terminalul containerului, rulăm următoarele comenzi:
 
-   ```bash
-   apt install apache2 -y
-   ```
-
-   - **Scop:** Instalează serverul web Apache în interiorul containerului fără a solicita confirmări manuale (-y pentru a confirma automat).
-   - **Rezultat:** Apache este instalat și pregătit pentru a fi pornit.
-
-   ```bash
-   service apache2 start
-   ```
-
-   - **Scop:** Pornirea serviciului Apache în interiorul containerului.
-   - **Rezultat:** Serverul web Apache este pornit și gata să servească conținut.
-
-2. **Testarea paginii web:**
-
-   Deschidem un browser și accesăm adresa http://localhost:8000. Ar trebui să vedem pagina web implicită Apache.
-
-   ![Pagina web implicită Apache](img/web-ubuntu.png)
-
-   - **Scop:** Verificarea funcționării serverului web Apache și a conectivității la container.
-   - **Rezultat:** Vizualizarea paginii web implicite Apache în browser.
-
-   În continuare, executăm următoarele comenzi în terminalul containerului:
-
-   ```bash
-   ls -l /var/www/html/
-   ```
-
-   - **Scop:** Afișează conținutul directorului de rădăcină al site-ului web Apache.
-   - **Rezultat:** Lista fișierelor și directoarelor din directorul de rădăcină al site-ului web Apache.
-
-   ```bash
-   echo '<h1>Hello, World!</h1>' > /var/www/html/index.html
-   ```
-
-   - **Scop:** Creează un fișier HTML simplu care va afișa textul "Hello, World!" în directorul de rădăcină al site-ului web Apache.
-   - **Rezultat:** Fișierul HTML index.html este creat sau actualizat cu conținutul specificat.
-
-   Reîmprospătăm pagina în browser. Ar trebui acum să vedem textul "Hello, World!" afișat pe pagină.
-
-   ![Pagina web modificată](img/web-mod.png)
-
-   - **Scop:** Verificarea funcționării serverului web Apache și a conținutului specificat în fișierul index.html.
-   - **Rezultat:** Vizualizarea textului "Hello, World!" pe pagina web în browser.
-
-3. **Explorarea configurării Apache:**
-
-   Executăm următoarele comenzi în terminalul containerului:
-
-   ```bash
-   cd /etc/apache2/sites-enabled/
-   ```
-
-   - **Scop:** Schimbă directorul de lucru către directorul de configurare a site-urilor activat Apache.
-   - **Rezultat:** Navigarea către directorul de configurare a site-urilor Apache.
-
-   ```bash
-   cat 000-default.conf
-   ```
-
-   - **Scop:** Afișează conținutul fișierului de configurare pentru site-ul implicit Apache.
-   - **Rezultat:** Afișează configurarea site-ului implicit Apache în consolă.
-
-   - **Scop:** Vizualizarea configurării site-ului implicit Apache.
-   - **Rezultat:** Afișarea conținutului fișierului de configurare al site-ului implicit Apache în consolă.
-
-4. **Finalizare și curățare:**
-
-   Închidem fereastra terminalului containerului cu comanda 'exit'.
-
-   Afișăm lista de containere Docker în terminalul gazdă:
-
-   ```bash
-   docker ps -a
-   ```
-
-   - **Scop:** Afișează o listă a tuturor containerelor Docker, inclusiv cele oprite.
-   - **Rezultat:** Lista containerelor Docker în consolă.
-
-   Ștergem containerul creat anterior:
-
-   ```bash
-   docker rm containers03
-   ```
-
-   - **Scop:** Șterge containerul Docker specificat.
-   - **Rezultat:** Containerul Docker este șters din sistemul gazdă.
-
-   ![Ștergerea containerului](img/ster-cont.png)
-
-   - **Scop:** Confirmarea ștergerii containerului.
-   - **Rezultat:** Confirmarea ștergerii containerului în consolă.
+```bash
+apt update
