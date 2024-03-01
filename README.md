@@ -114,7 +114,7 @@ docker rm containers03
 - **Descriere:** Șterge containerul Docker specificat.
 - **Rezultat:** Containerul Docker este șters din sistemul gazdă.
 
-![Ștergerea containerului](img/ster-cont.png)
+![Ștergerea containerului](img/sergere-continer.png)
 
 - **Descriere:** Confirmarea ștergerii containerului.
 - **Rezultat:** Confirmarea ștergerii containerului în consolă.
