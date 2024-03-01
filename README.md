@@ -22,14 +22,14 @@ docker run -ti -p 8000:80 --name containere03 ubuntu bash
 
 ```bash
 apt update
-
+'''
 
 - **Scop:** Actualizează lista de pachete disponibile pentru instalare în interiorul containerului.
 - **Rezultat:** Lista de pachete disponibile este actualizată, pregătind sistemul pentru instalarea Apache.
 
 ```bash
 apt install apache2 -y
-
+'''
 
 - **Scop:** Instalează serverul web Apache în container fără a solicita confirmare manuală (-y pentru a confirma automat).
 - **Rezultat:** Apache este instalat și pregătit pentru pornire.
